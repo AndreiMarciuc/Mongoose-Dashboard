@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html style="margin:20px;">
+
+<head>
+    <title>Pet Dashboard</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+
+</head>
+
+<body>
+    <h2>Edit Pet</h2>
+    <div class="panel-heading ">
+        <h4>
+            <a href="/">See other Pets </a>
+        </h4>
+    </div>
+
+
+    <form action="/pets/<%= pet.id %>" method="post" class="form-group col-md-5">
+        <label>Name: </label>
+
+        <input type="text" name="name" class="form-control" value="<%= pet.name%>" ></input>
+
+        <label>Color: </label>
+        <input type="text" name="color" class="form-control " value="<%= pet.color %>"></input>
+
+        <label>Age: </label>
+        <input type="number" name="age" class="form-control" value="<%= pet.age %>"></input>
+
+
+        <br>
+        <input type="submit" class="btn btn-default md-5" value="Update"></input>
+    </form>
+
+</body>
+
+</html>

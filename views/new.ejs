@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html style="margin:20px;">
+
+<head>
+    <title>Pet Dashboard</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+
+</head>
+
+<body>
+    <h2>Add A New Pet</h2>
+    <div class="panel-heading ">
+        <h4>
+            <a href="/">See other Pets </a>
+        </h4>
+    </div>
+
+    <div class="panel-body">
+            <% if(typeof(errors) != 'undefined' ) { %>
+                <% for (var x in errors) { %>
+                 <div class="alert alert-danger" role="alert"> <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> <%= errors[x].message %></div>
+                 <% } %>
+              <% } %>
+        <form action="/" method="post" class="form-group col-md-5">
+            <label>Name: </label>
+
+            <input type="text" name="name" class="form-control"></input>
+
+            <label>Color: </label>
+            <input type="text" name="color" class="form-control "></input>
+
+            <label>Age: </label>
+            <input type="number" name="age" class="form-control"></input>
+            
+
+            <br>
+            <input type="submit" class="btn btn-default md-5" value="Add"></input>
+        </form>
+    </div>
+</body>
+
+</html>

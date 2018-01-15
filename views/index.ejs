@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html style="margin:20px;">
+
+<head>
+	<title>Pets Dashboard</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	    crossorigin="anonymous">
+
+</head>
+
+<body>
+	<h1>Welcome to the Pets Dashboard</h1>
+	<br>
+	<h2>All Pets:</h2>
+	
+		<div class="col-md-6">
+			<table class="table table-bordered ">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Color</th>
+						<th>Age</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<% for (var i in pet) { %>
+					<tr>
+						<td>
+							<a href="/show/<%= pet[i].id %>">
+								<%= pet[i].name %>
+							</a>
+						</td>
+						<td>
+							<%= pet[i].color %>
+						</td>
+						<td>
+							<%= pet[i].age %> 
+						</td>
+						
+					</tr>
+					<% } %>
+				</tbody>
+			</table>
+
+			
+				<form action="/new" method="get">
+					<button style="margin-top: 30px;" class="btn btn-default">Add A New Pet</button>
+				</form>
+		</div>
+</body>
+
+</html>
